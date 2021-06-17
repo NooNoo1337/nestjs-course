@@ -9,7 +9,7 @@ COPY package.json .
 # RUN yarn install --frozen-lockfile --production --audit
 
 # because of @nestjs/cli as dev dep
-RUN yarn install
+RUN yarn install  --frozen-lockfile
 
 # Copy other files
 COPY . .
