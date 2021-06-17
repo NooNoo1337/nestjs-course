@@ -12,3 +12,11 @@ services:
     volumes:
       - ./mongo-data:/data/db
     command: --wiredTigerCacheSizeGB 1.5
+  api:
+    image: api:latest # bad practise to use last tag
+    container_name: api
+    restart: always
+    ports:
+      - 4000:4000
+    volumes:
+      - ./.env:/usr/app/.env
