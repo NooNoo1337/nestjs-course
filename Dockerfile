@@ -6,7 +6,10 @@ WORKDIR /usr/app
 
 # Install dependencies (exclude devDependencies because of --production flag) and make audit check
 COPY package.json .
-RUN yarn install --frozen-lockfile --production --audit
+# RUN yarn install --frozen-lockfile --production --audit
+
+# because of @nestjs/cli as dev dep
+RUN yarn install
 
 # Copy other files
 COPY . .
